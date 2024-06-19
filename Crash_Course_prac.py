@@ -1,7 +1,15 @@
-#C
+#Crash_Course_in_Python_Practice_Code
 
-print("This is where the world ends")
-print("If i say hello world one more time, I may just take it over")
+#Helpful links can be found here
+
+# https://ehmatthes.github.io/pcc_3e/ (solutions and updates)
+# https://github.com/ehmatthes/pcc_3e/ (github zip file)
+# to read an excel file at work i needed to pip install openpyxl
+# answeres to excercises (https://ehmatthes.github.io/pcc/solutions/chapter_4.html#4-3-counting-to-twenty)
+# I may try to learn how to host my own server and upload versions to github and git but it will take time.
+
+print("\tThis is where the world ends")
+print("If i say hello world one more time, \nI may just take it over")
 #import this # this is a poem by tim peters for code edequite, kind of fun
 name = "hello to all!"
 name.title() # upper and lower as well
@@ -95,3 +103,30 @@ cube = [x**3 for x in range(1,11)]  #found similar online but got it first try
 print(cube)
 for cube in cubes:
     print(cube)
+    
+# 4.10 Slices using the bicycles list
+print(f'the first three items of the bicycles list are : {bicycles[:3]}')
+
+#done their way to show each line
+print("\nThe first three bikes \nin bicycles are:")
+for value in bicycles[:3]:
+    print(value)    
+print("The Last three items in bicycles are:")
+for value in bicycles[-3:]:
+    print(value.title())
+print(bicycles)   # i do not understand why it is sorted now, bicycles.sort() shouldnt be permanent 
+
+#4.11 My Pizzas, your Pizzas
+pizzas = ["pepperoni", "Cheese", "Combo", "Vegan", "Pesto", "Mushroom and Olive"]
+friends_pizza = pizzas[:] # this is an individual copy of the list that is now its own 
+friends_pizza.append("Veggie")
+friends_pizza.remove("Cheese")
+
+print("These are my favorite pizzas")
+for value in pizzas:
+    print(value)
+print("These are my friends favorite pizzas")
+for value in friends_pizza:
+    print(value)
+#skipping 4.12 for foods.py for now
+    
