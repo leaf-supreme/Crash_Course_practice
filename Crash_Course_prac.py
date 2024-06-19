@@ -138,4 +138,10 @@ for value in basic_buffet:
 basic_buffet_replace = ("rolls", "pizza", "ribs", "soda", "ice cream")
 for value in basic_buffet_replace:
     print(value)
-#did it work?
+#did it work? YES IT DID!
+# 4.14 PEP 8 Code style and style guide https://python.org/dev/peps/pep-0008
+
+# 4.15 Code Review 
+#to add ruler to vscode -> setting->rulers->edit.json file
+#"editor.rulers": [80, 99] to add lines at 80 and 99
+  
