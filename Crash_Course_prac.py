@@ -129,4 +129,12 @@ print("These are my friends favorite pizzas")
 for value in friends_pizza:
     print(value)
 #skipping 4.12 for foods.py for now
-    
+
+#4.13 Buffet 
+basic_buffet = ("breadsticks", "pizza", "chicken", "soda", "ice cream")
+for value in basic_buffet:
+    print(value)
+# basic_buffet(1) = "orange" cant modufy things in a tuple
+basic_buffet_replace = ("rolls", "pizza", "ribs", "soda", "ice cream")
+for value in basic_buffet_replace:
+    print(value)
