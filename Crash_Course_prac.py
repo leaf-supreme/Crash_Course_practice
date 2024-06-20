@@ -33,7 +33,7 @@ bicycles[0] = 'trekk'
 bicycles.append('canyon')# always adds it to the end
 bicycles.append('huffy')
 bicycles.insert(2, 'fairlight')
-last_item = bicycles.pop() #removes last item on list but lets you use it first, you can also specify .pop(2)...
+last_item = bicycles.pop() #removes last item on list but is usable, you can also specify .pop(2)...
 print(f"The last bike i will not own is a {last_item}")
 to_expensive = bicycles.remove('pinarello') # doesnt remove all instances of item, use loop to remove
 sorted_bikes = bicycles.sort()  # bicycles.sort(reverse=TRUE), displays sorted but not permanent, bicycles.reverse() is permanent
@@ -114,7 +114,7 @@ for value in bicycles[:3]:
 print("The Last three items in bicycles are:")
 for value in bicycles[-3:]:
     print(value.title())
-print(bicycles)   # i do not understand why it is sorted now, bicycles.sort() shouldnt be permanent 
+print(bicycles)  #I do not understand why it is sorted now, bicycles.sort() shouldnt be permanent 
 
 #4.11 My Pizzas, your Pizzas
 pizzas = ["pepperoni", "Cheese", "Combo", "Vegan", "Pesto", "Mushroom and Olive"]
@@ -144,4 +144,24 @@ for value in basic_buffet_replace:
 # 4.15 Code Review 
 #to add ruler to vscode -> setting->rulers->edit.json file
 #"editor.rulers": [80, 99] to add lines at 80 and 99
-  
+#_______________________________________________________________________________
+#_______________________________________________________________________________
+#_____________________CHAPTER 5 IF STATEMENTS___________________________________
+#5.1 Conditional Tests 
+car = "Mazda"
+print(car == "Mazda")
+
+num = 42
+print(num>=43)
+
+nom = 34
+print(nom<=34)
+x = 12
+print(x != 13)
+
+first_car = "Ford Truck"
+first_auto = "Acura"
+current_car = "Mazda"
+print(f"my first car was a {first_car == "Mazda"}")
+if first_car == "Ford Truck" or first_auto == "Ford":
+    print(f"my first car was a {first_car}")
