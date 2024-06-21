@@ -159,9 +159,45 @@ print(nom<=34)
 x = 12
 print(x != 13)
 
+age = 16
+age == 16
+age >= 12
+age <= 14 
+age == 16 or age >= 14 
+age != 15 and age == 16
+can_drive = 17
+if can_drive >= 17  and age >= 17:
+    print("you are able to drive")
+else:
+    print("you cannot drive")
+
 first_car = "Ford Truck"
 first_auto = "Acura"
 current_car = "Mazda"
 print(f"my first car was a {first_car == "Mazda"}")
 if first_car == "Ford Truck" or first_auto == "Ford":
     print(f"my first car was a {first_car}")
+
+#5.2 More Contitional Tests 
+hobbies = ["Whittle", "bike", "sew", "make"]
+if hobbies[0] == "whittle":
+    print(f"you enjoy {hobbies[0]}ing as a hobby.")
+elif hobbies[2] == "sew":
+    print(f"you enjoy {hobbies[2]}ing as a hobby.")
+else:
+    print("you have no hobbies")
+
+if first_car.lower() == "ford truck":
+    print("cool")
+if "bike" in hobbies:
+    print("yes")
+
+hobbies_lower = [u.lower() for u in hobbies]
+print(hobbies_lower)
+if hobbies_lower == "sew":
+    print("you got it")
+
+if "sew"  in  hobbies:
+    print("you like to sew")
+if "eat" not in hobbies:
+    print("you dont like to eat")
