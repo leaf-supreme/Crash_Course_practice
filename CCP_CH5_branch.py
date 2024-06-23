@@ -102,5 +102,8 @@ for num in ord_num:
         print(str(num) + "rd")
     elif num >= 4:
         print(str(num) + "th")
+#will it publish to main?
+print(3)
+
 
 
