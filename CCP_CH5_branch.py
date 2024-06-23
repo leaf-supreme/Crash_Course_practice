@@ -52,23 +52,55 @@ if "bean" in fav_fruit:
 else:
     print("you dont like bean")
     
+
+    
 # 5.8 Hello Admin/ and 5.9 Checking for Username (empty list[] with if/else)
 # adding 5.10 to the code as well______pause point at 5.10 new_user list
 current_user = ['admin', 'liver_wurst', 'pooty_tang', 'Reginald', 'user']
-new_user = ['rustabell', 'liver_wurst', 'rap raplinger']
+new_user = ['rustabell', 'Liver_wurst', 'rap raplinger']
 
-for new in new_user:
-    if new == current_user:
-        print("you need to find a new name")
-    elif new != current_user:
+current_user_lower = [user.lower() for user in current_user]
+print(current_user_lower)
+
+
+for new in new_user:  #check to see if new user name is in current user
+    if new.lower() in current_user_lower: # do not forget to check in list use keyword "in"
+        print( new + " you need to find a new name")
+    elif new not in current_user:
         print(f"{new} is avaliable")
 
-
-if current_user:
+if current_user:  # check on users with account, and special for admin
     for user in current_user:
         if user == 'admin':
-            print("Hello Admin, would you like status report?")
+            print("Hello Admin, \nwould you like status report?")
         if user != 'admin':
-            print(f"Hello {user}, U SUCK")
+            print(f"Hello {user}, \nwhere may i direct you")
 else:
     print("you do not have an account foo!")
+    
+    
+#cool bit of code from Mimo app with user input
+'''name = input("Hello! What is your name?  ")
+print(f"Nice to meet you {name}!")
+age_input = input("How old are you?:")
+age = int(age_input)
+bot_age=3
+age_difference= age - bot_age
+print(f"You are {age_difference} years older them me. I'm only {bot_age} years old!")
+color = input("What's your favorite color?: ")
+print(f"Oh, {color} really is a beautiful color")'''
+
+# 5.11 ordinal numbers 
+ord_num = list(range(1,10))
+
+for num in ord_num:
+    if num == 1:
+        print(str(num) + "st")
+    elif num == 2:
+        print(str(num) + "nd")
+    elif num == 3:
+        print(str(num) + "rd")
+    elif num >= 4:
+        print(str(num) + "th")
+
+
