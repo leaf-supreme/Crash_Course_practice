@@ -194,4 +194,36 @@ for name, numb in fav_numbs.items():
     for noomber in numb:
         print('\t-'+ str(noomber))
         
-# 6.11 Cities
+# 6.11 Cities a dictionary inside of a dicionary (tricky to call each piece)
+cities = {
+    'san jose':{
+        'type': 'City',
+        'pop': 2000000,
+        'bird': 'seagul',
+        'song': 'Macaframalama'
+        },
+    'Mt. View':{
+        'type': 'city',
+        'pop': 400000,
+        'bird': 'duck',
+        'song': 'apple bottom jeans',
+        },
+    'L.A.':{
+        'type': 'City',
+        'pop': 2500000,
+        'bird': 'big bird',
+        'song': 'Bay to L.A.',
+        }
+     }
+for city, info in cities.items():
+    typee = info['type'].title()
+    pop = info['pop']
+    bird = info['bird'].title()
+    song = info['song'].title()
+    print('\n' + city.title())
+    print(f'\t-' + ' is a '+ typee + ' with a pop of ' + str(pop) + ' and the' 
+        ' city song is ' + song)
+    
+# 6.12 Extensions (going to skip and move as its about improving older code)
+# the one thing i dont like is appending info of a dict to an emprty list,
+# i thought there might be a better way to add it to a blank list. 
