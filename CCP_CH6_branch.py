@@ -96,6 +96,41 @@ for names in name_gamers:
     elif names == fav_games.keys():
         print(f"Hello {names}, you should take a poll")'''
     if names in fav_games.keys():
-        print(names.title() + 'you dont need to poll')
+        print('\n' + names.title() + ' you dont need to poll')
     else:
-        print(names.title() + ', Please take this poll.')
+        print('\n' + names.title() + ', Please take this poll.')
+        
+# 6.7 People 
+people = []
+shire_folk = {'first_name': 'Bilbo', 
+         'last_name': 'Baggins',
+         'age': 74,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'samwise', 
+         'last_name': 'Gamgee',
+         'age': 65,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'meridoc', 
+         'last_name': 'Took',
+         'age': 54,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'pippin', 
+         'last_name': 'Brandybuck',
+         'age': 55,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+'''for  user, user_info in people:    # did not work
+    name = user.title() + " " + user_info.title()
+    print(name)'''
+for shire_folk in people:
+    namee = shire_folk['first_name'].title() + ' ' + shire_folk['last_name'].title()
+    age = str(shire_folk['age'])
+    loc = shire_folk['city'].title()
+    print('\n' + namee + ' of ' + loc + ' is ' + age + ' years old')
