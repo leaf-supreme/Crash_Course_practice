@@ -45,7 +45,13 @@ for key, value in bilbo.items():  # for loops for dict need the items() keyword 
     print(f'Value: {value}')
     
 # 6.2 Favorite Numbers
-fav_numbs = {'ciena': 13, 'kyle': 42, 'jacob': 2112, 'kyle d': 11, 'arthur': 42}
+fav_numbs = {
+    'ciena': [13,69,11,10],
+    'kyle': [42,69,10,11,], 
+    'jacob': [2112, 1, 69,],
+    'kyle d': [11,12,13,14,],
+    'arthur': [42,1,2,3,],
+    }
 for key, value in fav_numbs.items():
     print("\n", key)
     print('', value)
@@ -134,3 +140,58 @@ for shire_folk in people:
     age = str(shire_folk['age'])
     loc = shire_folk['city'].title()
     print('\n' + namee + ' of ' + loc + ' is ' + age + ' years old')
+
+# 6.8 Pets 
+pets = []
+pet = {
+    'type': 'cat',
+    'name': 'scromp',
+    'age': 12,
+    'owner_name': 'Butt Much'
+}
+pets.append(pet)
+pet = {
+    'type': 'dog',
+    'name': 'ruffus',
+    'age': 7,
+    'owner_name': 'Rodger Evers' 
+}
+pets.append(pet)
+pet = {
+    'type': 'lizzard',
+    'name': 'julius',
+    'age': 23,
+    'owner_name': 'Mr. Black'
+}
+pets.append(pet)
+#my attempt at the for loop, could be much shorter
+'''for pet in pets:  
+    pet_type = pet['type'].lower() 
+    pet_name = pet['name'].title()
+    pet_age = str(pet['age'])
+    pet_owner = pet['owner_name'].title()
+    print('\n' + pet_name + ' is a ' + pet_type + ' at the age of ' + pet_age + 
+          ' who is cared for by ' + pet_owner)'''
+for pet in pets:          # much simpler to code and gives full list of info
+    print('\nHere is what i know about ' + pet['name'].title())
+    for key, info in pet.items():
+        print('\t' + key + ": " + str(info))
+        
+# 6.9 Favorite Places 
+fav_places = {
+    'Jacob': ['Golf Course', 'Castle Rock', 'Shorline',],
+    'Ciena': ['Hawaii', 'Santa Cruz', 'Monteray',],
+    'Kyle_D': ['San Jose', 'Pismo',],
+}
+for name, places in fav_places.items():
+    print('\n'+ name.title() + "'s favorite places are: ")
+    for place in places:
+        print('- ' + place)
+
+# 6.10 Favorite numbers using excr6.2
+for name, numb in fav_numbs.items():
+    print('\n' + name.title() + "'s favorite numbers are:")
+    for noomber in numb:
+        print('\t-'+ str(noomber))
+        
+# 6.11 Cities
