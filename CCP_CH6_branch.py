@@ -44,6 +44,7 @@ for key, value in bilbo.items():  # for loops for dict need the items() keyword 
     print(f'\nKey: {key}')
     print(f'Value: {value}')
     
+
 # 6.2 Favorite Numbers
 fav_numbs = {
     'ciena': [13,69,11,10],
