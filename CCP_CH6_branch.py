@@ -43,7 +43,16 @@ bilbo = {'first_name': 'Bilbo',
 for key, value in bilbo.items():  # for loops for dict need the items() keyword to pull key:values
     print(f'\nKey: {key}')
     print(f'Value: {value}')
-    
+
+# 6.2 Favorite Numbers
+fav_numbs = {
+    'ciena': [13,69,11,10],
+    'kyle': [42,69,10,11,], 
+    'jacob': [2112, 1, 69,],
+    'kyle d': [11,12,13,14,],
+    'arthur': [42,1,2,3,],
+    }
+=======
 # 6.2 Favorite Numbers
 fav_numbs = {'ciena': 13, 'kyle': 42, 'jacob': 2112, 'kyle d': 11, 'arthur': 42}
 for key, value in fav_numbs.items():
@@ -100,6 +109,129 @@ for names in name_gamers:
     else:
         print('\n' + names.title() + ', Please take this poll.')
 
+# 6.7 People 
+people = []
+shire_folk = {'first_name': 'Bilbo', 
+         'last_name': 'Baggins',
+         'age': 74,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'samwise', 
+         'last_name': 'Gamgee',
+         'age': 65,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'meridoc', 
+         'last_name': 'Took',
+         'age': 54,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'pippin', 
+         'last_name': 'Brandybuck',
+         'age': 55,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+'''for  user, user_info in people:    # did not work
+    name = user.title() + " " + user_info.title()
+    print(name)'''
+for shire_folk in people:
+    namee = shire_folk['first_name'].title() + ' ' + shire_folk['last_name'].title()
+    age = str(shire_folk['age'])
+    loc = shire_folk['city'].title()
+    print('\n' + namee + ' of ' + loc + ' is ' + age + ' years old')
+
+# 6.8 Pets 
+pets = []
+pet = {
+    'type': 'cat',
+    'name': 'scromp',
+    'age': 12,
+    'owner_name': 'Butt Much'
+}
+pets.append(pet)
+pet = {
+    'type': 'dog',
+    'name': 'ruffus',
+    'age': 7,
+    'owner_name': 'Rodger Evers' 
+}
+pets.append(pet)
+pet = {
+    'type': 'lizzard',
+    'name': 'julius',
+    'age': 23,
+    'owner_name': 'Mr. Black'
+}
+pets.append(pet)
+#my attempt at the for loop, could be much shorter
+'''for pet in pets:  
+    pet_type = pet['type'].lower() 
+    pet_name = pet['name'].title()
+    pet_age = str(pet['age'])
+    pet_owner = pet['owner_name'].title()
+    print('\n' + pet_name + ' is a ' + pet_type + ' at the age of ' + pet_age + 
+          ' who is cared for by ' + pet_owner)'''
+for pet in pets:          # much simpler to code and gives full list of info
+    print('\nHere is what i know about ' + pet['name'].title())
+    for key, info in pet.items():
+        print('\t' + key + ": " + str(info))
+        
+# 6.9 Favorite Places 
+fav_places = {
+    'Jacob': ['Golf Course', 'Castle Rock', 'Shorline',],
+    'Ciena': ['Hawaii', 'Santa Cruz', 'Monteray',],
+    'Kyle_D': ['San Jose', 'Pismo',],
+}
+for name, places in fav_places.items():
+    print('\n'+ name.title() + "'s favorite places are: ")
+    for place in places:
+        print('- ' + place)
+
+# 6.10 Favorite numbers using excr6.2
+for name, numb in fav_numbs.items():
+    print('\n' + name.title() + "'s favorite numbers are:")
+    for noomber in numb:
+        print('\t-'+ str(noomber))
+        
+# 6.11 Cities a dictionary inside of a dicionary (tricky to call each piece)
+cities = {
+    'san jose':{
+        'type': 'City',
+        'pop': 2000000,
+        'bird': 'seagul',
+        'song': 'Macaframalama'
+        },
+    'Mt. View':{
+        'type': 'city',
+        'pop': 400000,
+        'bird': 'duck',
+        'song': 'apple bottom jeans',
+        },
+    'L.A.':{
+        'type': 'City',
+        'pop': 2500000,
+        'bird': 'big bird',
+        'song': 'Bay to L.A.',
+        }
+     }
+for city, info in cities.items():
+    typee = info['type'].title()
+    pop = info['pop']
+    bird = info['bird'].title()
+    song = info['song'].title()
+    print('\n' + city.title())
+    print(f'\t-' + ' is a '+ typee + ' with a pop of ' + str(pop) + ' and the' 
+        ' city song is ' + song)
+    
+# 6.12 Extensions (going to skip and move as its about improving older code)
+# the one thing i dont like is appending info of a dict to an emprty list,
+# i thought there might be a better way to add it to a blank list. 
+=======
+
 # 6.7 People using bilbo and makin two others
 samwise = {'first_name': 'Samwise',
            'last_name': 'Gamgee',
@@ -120,4 +252,4 @@ people = [bilbo,  samwise, meri, pippin]
 for keys, values in people.items():
     print(value.title())
 
-    
+
