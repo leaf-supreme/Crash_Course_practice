@@ -144,6 +144,7 @@ for value in basic_buffet_replace:
 # 4.15 Code Review 
 #to add ruler to vscode -> setting->rulers->edit.json file
 #"editor.rulers": [80, 99] to add lines at 80 and 99
+
 #_______________________________________________________________________________
 #_______________________________________________________________________________
 #_____________________CHAPTER 5 IF STATEMENTS___________________________________
@@ -205,3 +206,345 @@ if "eat" not in hobbies:
 #does this appear in the branch or on the main?
 #5-3 Alien Colors 
 alien_color = "red"
+print(alien_color)
+
+#testing to see if this is the branch that i can then merge to the main CCP practice branch 
+#starting with Chapter 5 practice so i dont need to review a massive file the whole time 
+#  5.3 Alien Colors
+alien_color = "green"
+if alien_color == "green":
+    print("player earned 5-pts")
+if alien_color == "red":
+    print("0 pts")
+
+# 5.4 Alien Colors 2
+alien_color = "green"
+if alien_color == "green":
+    print("you've earned 5 pts")
+else:
+    print("you've earned 10 pts")
+
+#5.5 Alien Colors #3
+alien_color = "green"
+player_name = "Kilgore"
+if alien_color == "green":
+    print(f"{player_name} earned 5 pts")
+elif alien_color == "yellow":
+    print(f"{player_name} earned 10 pts")
+else:
+    print(f"{player_name} earned 15 pts")
+    
+# 5.6 Stages of life using if-elif-else chain
+age = 65
+
+if age <= 2:
+    print("you are bby")
+elif 2 < age <= 4:
+    print("you are toddler")
+elif 4 < age < 13:
+    print("you is kid")
+elif 13 <= age < 20:
+    print("you is teenager")
+elif 20 <= age < 65:
+    print("you is adult")
+elif age >= 65:
+    print("you is elder")
+else:
+    print("you are unalive")
+    
+#5.7 Favorite Fruits 
+fav_fruit = ["strawberry", "blueberry", "bananna", "mango", "apple", "avacado"]
+
+if "apple" in fav_fruit:
+    print(f"you really like {fav_fruit[4]}")
+if "bean" in fav_fruit:
+    print("you really like bean")
+else:
+    print("you dont like bean")
+    
+
+    
+# 5.8 Hello Admin/ and 5.9 Checking for Username (empty list[] with if/else)
+# adding 5.10 to the code as well______pause point at 5.10 new_user list
+current_user = ['admin', 'liver_wurst', 'pooty_tang', 'Reginald', 'user']
+new_user = ['rustabell', 'Liver_wurst', 'rap raplinger']
+
+current_user_lower = [user.lower() for user in current_user]
+print(current_user_lower)
+
+
+for new in new_user:  #check to see if new user name is in current user
+    if new.lower() in current_user_lower: # do not forget to check in list use keyword "in"
+        print( new + " you need to find a new name")
+    elif new not in current_user:
+        print(f"{new} is avaliable")
+
+if current_user:  # check on users with account, and special for admin
+    for user in current_user:
+        if user == 'admin':
+            print("Hello Admin, \nwould you like status report?")
+        if user != 'admin':
+            print(f"Hello {user}, \nwhere may i direct you")
+else:
+    print("you do not have an account foo!")
+    
+    
+#cool bit of code from Mimo app with user input
+'''name = input("Hello! What is your name?  ")
+print(f"Nice to meet you {name}!")
+age_input = input("How old are you?:")
+age = int(age_input)
+bot_age=3
+age_difference= age - bot_age
+print(f"You are {age_difference} years older them me. I'm only {bot_age} years old!")
+color = input("What's your favorite color?: ")
+print(f"Oh, {color} really is a beautiful color")'''
+
+# 5.11 ordinal numbers 
+ord_num = list(range(1,10))
+
+for num in ord_num:
+    if num == 1:
+        print(str(num) + "st")
+    elif num == 2:
+        print(str(num) + "nd")
+    elif num == 3:
+        print(str(num) + "rd")
+    elif num >= 4:
+        print(str(num) + "th")
+#will it publish to main?
+print(3)
+#___________________________________________________________________________________________________
+#___________________________________________________________________________________________________
+#___________________________________________________________________________________________________
+# Chapter 6 Dictionaries 
+#I think i deleted this branch on accident, still uncertain on how to deal with branchs and main
+
+# dictionaries{'key': value,..} use key-value pairs, a kep point to the value which can be anything
+# such as a list, number, even another dictionary 
+
+# example dictionary 
+alien_0 = {'color': 'green', 'points': 5 }
+alien_0['x-position'] = 0 # the left most part of the screen in pixels
+alien_0['y-position'] = 25 #the supposed top of the screen in pixels
+# del alien_0['points']     # used to delete the key:value pair
+print(alien_0['color'])
+
+# more indepth sample 
+
+alien_0['speed'] = 'medium'
+
+#move alien to right 
+if alien_0['speed'] == 'slow':
+    x_increment = 1
+elif alien_0['speed'] == 'medium':
+    x_increment = 2
+else:
+    #this must be a fast alien
+    x_increment = 3
+    
+# new position 
+alien_0['x-position'] = alien_0['x-position'] + x_increment
+print (f"New position: {alien_0['x-position']}")
+
+# using .get() for dict values that may not exsist
+del alien_0['points']
+# del() keyword will show NONE if nothing assigned, you can tell what to say with second statement
+point_value = alien_0.get('points', 'No point value assigned')
+print(point_value)
+
+# 6.1 Person
+bilbo = {'first_name': 'Bilbo', 
+         'last_name': 'Baggins',
+         'age': '74',
+         'city': 'The Shire',
+         }
+for key, value in bilbo.items():  # for loops for dict need the items() keyword to pull key:values
+    print(f'\nKey: {key}')
+    print(f'Value: {value}')
+  
+# 6.2 Favorite Numbers
+fav_numbs = {
+    'ciena': [13,69,11,10],
+    'kyle': [42,69,10,11,], 
+    'jacob': [2112, 1, 69,],
+    'kyle d': [11,12,13,14,],
+    'arthur': [42,1,2,3,],
+    }
+for key, value in fav_numbs.items():
+    print("\n", key)
+    print('', value)
+    
+#6.3 Glossary 
+glossary = {'if': 'conditional statment',
+            'print': 'displays test in console',
+            'for': ' for loops allow for itterations',
+            'True': 'reads as 1, and is a conditional value',
+            'False': 'reads as 0, and is a conditional value',
+            'elif': 'else if statement, can use as many as needed',
+            'else': 'final statement, runs at end if if condition not met',
+            'where': 'is used for infinte loops and will loop until False',
+            'items()': 'is a method which return a sequence of key:value pairs',
+            'string': 'A series of characters.',
+            'comment': 'A note in a program that the Python interpreter ignores.',
+            'list': 'A collection of items in a particular order.',
+            'loop': 'Work through a collection of items, one at a time.',
+            'dictionary': "A collection of key-value pairs.",
+            'key': 'The first item in a key-value pair in a dictionary.',
+            'value': 'An item associated with a key in a dictionary.',
+            'conditional test': 'A comparison between two values.',
+            'float': 'A numerical value with a decimal component.',
+            'boolean expression': 'An expression that evaluates to True or False.',
+            }
+for key, value in glossary.items():   # items can be replced with .key(), or .value()
+    print(f'\n The {key} statment:')  # keys is the default value so its not necessarily needed
+    print(value)
+for word, meaning in glossary.items():
+    print(f"\n{word.title()} has the meaning : {meaning.lower()}")
+
+fav_games = {'kyle': "Doom", 
+             'Ciena': "Baldurs Gate",
+             'D': 'castlevaiena',
+             'jacob': 'Doom',}
+for value in set(fav_games.values()):  # set fxn shows single instance of key or value, no duplicate
+    print(value)
+# skip 6.4 which is glossary with loops as shown above
+# 6.5 Rivers (ill use my fav_games)
+for name, game in fav_games.items():
+    print(f"{name.title()}'s favorite game is {game.title()}")
+print('\n')
+#6.6 Polling using fav_games
+name_gamers = ['ciena', 'jacob', 'D', 'kyle', 'zach', 'daniel',]
+for names in name_gamers:
+    '''if names != fav_games.keys():
+        print(f"Hello {fav_games.keys()}, you dont need to take the poll")
+    elif names == fav_games.keys():
+        print(f"Hello {names}, you should take a poll")'''
+    if names in fav_games.keys():
+        print('\n' + names.title() + ' you dont need to poll')
+    else:
+        print('\n' + names.title() + ', Please take this poll.')
+        
+# 6.7 People 
+people = []
+shire_folk = {'first_name': 'Bilbo', 
+         'last_name': 'Baggins',
+         'age': 74,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'samwise', 
+         'last_name': 'Gamgee',
+         'age': 65,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'meridoc', 
+         'last_name': 'Took',
+         'age': 54,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+shire_folk = {'first_name': 'pippin', 
+         'last_name': 'Brandybuck',
+         'age': 55,
+         'city': 'The Shire',
+         }
+people.append(shire_folk)
+'''for  user, user_info in people:    # did not work
+    name = user.title() + " " + user_info.title()
+    print(name)'''
+for shire_folk in people:
+    namee = shire_folk['first_name'].title() + ' ' + shire_folk['last_name'].title()
+    age = str(shire_folk['age'])
+    loc = shire_folk['city'].title()
+    print('\n' + namee + ' of ' + loc + ' is ' + age + ' years old')
+
+# 6.8 Pets 
+pets = []
+pet = {
+    'type': 'cat',
+    'name': 'scromp',
+    'age': 12,
+    'owner_name': 'Butt Much'
+}
+pets.append(pet)
+pet = {
+    'type': 'dog',
+    'name': 'ruffus',
+    'age': 7,
+    'owner_name': 'Rodger Evers' 
+}
+pets.append(pet)
+pet = {
+    'type': 'lizzard',
+    'name': 'julius',
+    'age': 23,
+    'owner_name': 'Mr. Black'
+}
+pets.append(pet)
+#my attempt at the for loop, could be much shorter
+'''for pet in pets:  
+    pet_type = pet['type'].lower() 
+    pet_name = pet['name'].title()
+    pet_age = str(pet['age'])
+    pet_owner = pet['owner_name'].title()
+    print('\n' + pet_name + ' is a ' + pet_type + ' at the age of ' + pet_age + 
+          ' who is cared for by ' + pet_owner)'''
+for pet in pets:          # much simpler to code and gives full list of info
+    print('\nHere is what i know about ' + pet['name'].title())
+    for key, info in pet.items():
+        print('\t' + key + ": " + str(info))
+        
+# 6.9 Favorite Places 
+fav_places = {
+    'Jacob': ['Golf Course', 'Castle Rock', 'Shorline',],
+    'Ciena': ['Hawaii', 'Santa Cruz', 'Monteray',],
+    'Kyle_D': ['San Jose', 'Pismo',],
+}
+for name, places in fav_places.items():
+    print('\n'+ name.title() + "'s favorite places are: ")
+    for place in places:
+        print('- ' + place)
+
+# 6.10 Favorite numbers using excr6.2
+for name, numb in fav_numbs.items():
+    print('\n' + name.title() + "'s favorite numbers are:")
+    for noomber in numb:
+        print('\t-'+ str(noomber))
+        
+# 6.11 Cities a dictionary inside of a dicionary (tricky to call each piece)
+cities = {
+    'san jose':{
+        'type': 'City',
+        'pop': 2000000,
+        'bird': 'seagul',
+        'song': 'Macaframalama'
+        },
+    'Mt. View':{
+        'type': 'city',
+        'pop': 400000,
+        'bird': 'duck',
+        'song': 'apple bottom jeans',
+        },
+    'L.A.':{
+        'type': 'City',
+        'pop': 2500000,
+        'bird': 'big bird',
+        'song': 'Bay to L.A.',
+        }
+     }
+for city, info in cities.items():
+    typee = info['type'].title()
+    pop = info['pop']
+    bird = info['bird'].title()
+    song = info['song'].title()
+    print('\n' + city.title())
+    print(f'\t-' + ' is a '+ typee + ' with a pop of ' + str(pop) + ' and the' 
+        ' city song is ' + song)
+    
+# 6.12 Extensions (going to skip and move as its about improving older code)
+# the one thing i dont like is appending info of a dict to an emprty list,
+# i thought there might be a better way to add it to a blank list. 
+    
+

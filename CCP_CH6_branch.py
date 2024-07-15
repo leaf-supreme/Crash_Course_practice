@@ -43,7 +43,6 @@ bilbo = {'first_name': 'Bilbo',
 for key, value in bilbo.items():  # for loops for dict need the items() keyword to pull key:values
     print(f'\nKey: {key}')
     print(f'Value: {value}')
-    
 
 # 6.2 Favorite Numbers
 fav_numbs = {
@@ -53,6 +52,9 @@ fav_numbs = {
     'kyle d': [11,12,13,14,],
     'arthur': [42,1,2,3,],
     }
+=======
+# 6.2 Favorite Numbers
+fav_numbs = {'ciena': 13, 'kyle': 42, 'jacob': 2112, 'kyle d': 11, 'arthur': 42}
 for key, value in fav_numbs.items():
     print("\n", key)
     print('', value)
@@ -106,7 +108,7 @@ for names in name_gamers:
         print('\n' + names.title() + ' you dont need to poll')
     else:
         print('\n' + names.title() + ', Please take this poll.')
-        
+
 # 6.7 People 
 people = []
 shire_folk = {'first_name': 'Bilbo', 
@@ -228,3 +230,26 @@ for city, info in cities.items():
 # 6.12 Extensions (going to skip and move as its about improving older code)
 # the one thing i dont like is appending info of a dict to an emprty list,
 # i thought there might be a better way to add it to a blank list. 
+=======
+
+# 6.7 People using bilbo and makin two others
+samwise = {'first_name': 'Samwise',
+           'last_name': 'Gamgee',
+           'age': '65',
+           'city': 'The Shire',
+           }
+meri = {'first_name': 'Meridoc',
+        'last_name': 'Took',
+        'age': '54',
+        'city': 'The Shire',
+        }
+pippin = {'first_name': 'Pippin',
+          'last_name': 'Brandybuck',
+        'age': '55',
+        'city': 'The Shire',
+        }
+people = [bilbo,  samwise, meri, pippin]
+for keys, values in people.items():
+    print(value.title())
+
+
