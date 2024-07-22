@@ -187,7 +187,7 @@ def sandwhich_order(size, *innards):
         print(f'\t- {ingredients}')
     print('\n your Sandwhich is ready')
         
-kyles_which = sandwhich_order('Large', 'titties','soup', 'tittie soup')
+kyles_which = sandwhich_order('Large', 'onion','soup', 'soup', 'lemons')
 
 # _____________ 8.13 User Profile _____I already did that with Brian ellis
 kyle_profile = build_profile('Kyle', 'H', location='San Jose', age=30, Rizz=True)
@@ -208,5 +208,31 @@ def make_truck(make, model, **options):
     for option, value in options.items():
         car_dict[option] = value
     return car_dict
+
 mazda_3 = make_truck('Mazda', '3 i-touring', color='White', transmission="manual", tow_package = False)
 print(mazda_3)
+
+# Saving and using(importing) modules
+# if you saved create_truck.py you would import creat_truck as ct (or just create_truck)
+# then when you wanted to use it you would module_name.function_name()
+# import create_truck 
+# create_truck.make_truck('honda', 'civic', color=red,...)
+
+# if you wanted a specific function you would import specifically 
+# from CCP_CH8 import make_truck  (from module_name import funct_0, funct_1, funct_2...)
+# you do not need dot(.) notation if you specify which funct to import you can use as is 
+
+# you can import all functions from module with * e.g. from CCP_CH8 import * which allows the use
+# of all functions and can call them without (.) notation but can be faulty if there are multiple
+# functions or lines of code that share the same name. (.) is often more concise and descriptive
+
+# Styling Functions def function_name(parameter_0, parameter_1='default value') no spaces after (=)
+# def function_name(                                (Following PEP8 formatting)
+#       parameter_0, parameter_1, parameter_2,    (two tabs or 8 spaces for fxn parameters)
+#       parameter_3, parameter_4, parameter_5,):
+#       """Docstring describing what it does"""    (docstring short and tells what fxn does)
+#   Finction body                                  (fxn body 4 spaces or one tab)
+
+#________________8.15 Printing models in file importing_modules_practice.py
+# _______________8.16 Imports will also be done using ^^^ file
+
