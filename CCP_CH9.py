@@ -237,7 +237,7 @@ class Car():
         long_name = f'{self.year} {self.make.title()} {self.model.title()}'
         return long_name
     
-    def read_odometer():
+    def read_odometer(self):
         """Read Current Odometer"""
         print(f' Your car has {self.odometer_reading} miles on it')
         
@@ -287,8 +287,146 @@ class ElectricCar(Car):
         self.battery_size = Battery()
             
 my_polestar = ElectricCar('Polestar', '2', 2023)
-my_polestar.describe_battery()
+my_polestar.battery_size.describe_battery()  #battery_size calls the Battery() class 
 
-my_polestar.upgrade_battery()
-my_polestar.describe_battery()
+my_polestar.battery_size.battery_upgrade()
+my_polestar.battery_size.describe_battery()
+my_polestar.read_odometer()
+my_polestar.incement_odometer(120_200)
+my_polestar.read_odometer()
+
+#___________________ 9.10 Imported Resturant, 9.11 and 9.12 done on seperate file
+#importing modules e.g. from CCP_CH9 import Car, ElectricCar
+#                      from CCP_CH9 import *   (imports all but not descriptive or helpful to read)
+#                      from CCP_CH9 import ElectricCar as EC  
+
+#_________________ 9.13 Dice (importing from Python Library Random and Choice)
+
+'''from random import randint
+random = randint(1,21)
+print(random)'''
+
+class Die():
+    """Class for 6 side Dice Rolling"""
+    def __init__(self, side=6):
+        """Initilize Dice with standard 6 sides"""
+        self.side = side
         
+    def roll_die(self):
+        """Rolls dice with random value"""
+        from random import randint # you can import in a module (maybe only python native library)
+        print(randint(1,self.side)) # you should import before Class, and return value not print
+        
+d_d = Die(side=10) # this works to generate random number for specified sides of dice 
+d_d.roll_die() #I want to make a list and store the values made in a list then run a loop # of times
+roll = 1
+rolls = []
+while roll < 10:
+    d_d.roll_die()# i had print(d_d.roll_die()) which was retunring # then none then #, no print
+    roll += 1
+    
+# as the book has it, we more or less has the same Class definition which i goto on my own!!! 
+# Make a 6-sided die, and show the results of 10 rolls.
+d6 = Die()
+
+results = []
+for roll_num in range(10):  # i couldnt think of the range function, and my append was messing up
+    result = d6.roll_die()
+    results.append(result)
+print("10 rolls of a 6-sided die:")
+print(results)
+
+# Make a 10-sided die, and show the results of 10 rolls.
+d10 = Die(side=10) 
+
+results = []
+for roll_num in range(10):
+    result = d10.roll_die()
+    results.append(result) 
+print("\n10 rolls of a 10-sided die:")
+print(results) # this wont work before i printed the randint not returned it as in the book
+# i was still able to get mine to work well enough so ill leave it as it was completed with min help
+
+#__________________________ 9.14 Lottery 9.15 Lottery Analysis (difficult!!)
+from random import choice
+# this was my attempt, it worked to pull the ticket but the analysis as hard
+'''lotto = (1,'a',2,'b',3,'c',4,'d',5,'e',6,7,8,9,10,)
+my_ticket = ['a',1,'b',2]
+winning_nums = []
+count = 0
+while my_ticket != winning_nums:
+    for i in range(4):
+        winner = choice(lotto)
+        winning_nums.append(winner)
+        count += 1
+    if winning_nums == my_ticket:
+        break
+print(count)'''
+
+# 9.15 as the book has it. Very neat!
+def get_winning_ticket(possibilities):
+    """Return a winning ticket from a set of possibilities."""
+    winning_ticket = []
+
+    # We don't want to repeat winning numbers or letters, so we'll use a
+    #   while loop.
+    while len(winning_ticket) < 4:
+        pulled_item = choice(possibilities)
+
+        # Only add the pulled item to the winning ticket if it hasn't
+        #   already been pulled.
+        if pulled_item not in winning_ticket:
+            winning_ticket.append(pulled_item)
+
+    return winning_ticket
+
+def check_ticket(played_ticket, winning_ticket):
+    # Check all elements in the played ticket. If any are not in the 
+    #   winning ticket, return False.
+    for element in played_ticket:
+        if element not in winning_ticket:
+            return False
+
+    # We must have a winning ticket!
+    return True
+
+def make_random_ticket(possibilities):
+    """Return a random ticket from a set of possibilities."""
+    ticket = []
+    # We don't want to repeat numbers or letters, so we'll use a while loop.
+    while len(ticket) < 4:
+        pulled_item = choice(possibilities)
+
+        # Only add the pulled item to the ticket if it hasn't already
+        #   been pulled.
+        if pulled_item not in ticket:
+            ticket.append(pulled_item)
+
+    return ticket
+
+
+possibilities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e']
+winning_ticket = get_winning_ticket(possibilities)
+
+plays = 0
+won = False
+
+# Let's set a max number of tries, in case this takes forever!
+max_tries = 1_000_000
+
+while not won:
+    new_ticket = make_random_ticket(possibilities)
+    won = check_ticket(new_ticket, winning_ticket)
+    plays += 1
+    if plays >= max_tries:
+        break
+
+if won:
+    print("We have a winning ticket!")
+    print(f"Your ticket: {new_ticket}")
+    print(f"Winning ticket: {winning_ticket}")
+    print(f"It only took {plays} tries to win!")
+else:
+    print(f"Tried {plays} times, without pulling a winner. :(")
+    print(f"Your ticket: {new_ticket}")
+    print(f"Winning ticket: {winning_ticket}")
