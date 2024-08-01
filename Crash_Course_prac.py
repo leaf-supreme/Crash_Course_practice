@@ -1396,4 +1396,5 @@ if won:
 else:
     print(f"Tried {plays} times, without pulling a winner. :(")
     print(f"Your ticket: {new_ticket}")
-    print(f"Winning ticket: {winning_ticket}")
+    print(f"Winning ticket: {winning_ticket}") 
+# addind small change to push sync
