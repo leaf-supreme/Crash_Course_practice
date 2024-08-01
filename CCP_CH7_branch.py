@@ -1,1 +1,0 @@
-# Chapter 7: USER INPUT AND WHILE LOOPS
