@@ -1,0 +1,5 @@
+In Python I learned to create and endless loop as well as loop over a long list of data. 
+In Python I have also learned the difference between a list and a tuple.
+In Python I have learned that Booleans are the basic building blocks of original code (i think).
+In Python I found out that you can automate simple and complex tasks, which I want to do. 
+In Python I have learned that you must type carefully and double check your work, or ELSE!!!. 
