@@ -15,21 +15,30 @@ class Employee():
     def give_raise(self, payraise=5000):
         self.year_money += payraise
         
-#    def give_raise(self):
-#        standard_raise = input("will this be a standard 5000$ raise, y/n? ")
-#        if standard_raise == 'y':
-#            self.year_money += 5000    # self.year_money needed to be variable to update original,+=
-#        else:
-#            non_std_raise = int(input('Please specify raise amount?  '))
-#            self.year_money += non_std_raise
-#_____The above code works well but i dont know how to test user input well (maybe monkeypatch)_____  
-   
-bill = Employee('bill', 'liib', 98_000)
-billy = bill.employee_info()
-print(billy)
+#    def input_raise(self):
+#       standard_raise = input("will this be a standard 5000$ raise, y/n? ")
+#       if standard_raise == 'y':
+#           self.year_money += 5000    # self.year_money needed to be variable to update original,+=
+#       else:
+#           non_std_raise = int(input('Please specify raise amount?  '))
+#           self.year_money += non_std_raise
+# _____The above code works well but i dont know how to test user input well (maybe monkeypatch)'''  
 
-robin = Employee('robin', 'everet', 88_000)
-print(robin.employee_info())
-robin_raise = robin.give_raise(4999)
-robin_info = robin.employee_info()
-print(robin_info)
+
+
+# ____________Well apparently ''' commenting out down not work only # does for pyest and the class its called on
+
+#vvvvvvvvv you cant have test fuctions like below either. weird. 
+
+#bill = Employee('bill', 'liib', 98_000)
+#billy = bill.employee_info()
+#print(billy)
+
+#robin = Employee('robin', 'everet', 88_000)
+#print(robin.employee_info())
+#robin_raise = robin.give_raise(4999)
+#robin_info = robin.employee_info()
+#print(robin_info)
+
+#robin.input_raise()
+#print(robin.year_money)

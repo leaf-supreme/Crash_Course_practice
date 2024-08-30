@@ -65,4 +65,82 @@ def test_city_country_pop_size():
     "Test if City, Country, and pop size are formatted"
     saratoga = city_functions('saratoga', 'california', 180000)
     assert saratoga == ('Saratoga, California has a population of -180000')'''
+
+#Common uses and assertions for test classes
+# assert a == b
+# assert a != b
+# assert a  (True or False)
+# assert not a
+# assert element in/not in list 
+
+# Fixtures esentially set up a test env.
+# they require a decerator which goes at the front of a function
+# @pytest.fixture
+# def language_survey(): and so on ->
+# you are building am object or function that other tests can call upon 
+
+class AnonymousSurvey:
+    """Collect anonamous answers to survey questions"""
+    def __init__(self,question):
+        """Store a question and prepair to store responses"""
+        self.question = question 
+        self.responses = []
+        
+    def show_question():
+        """Show survey question"""
+        print(self.question)
+        
+    def store_response(self, new_response):
+        """store a single new response"""
+        self.responses.append(new_response) 
+        
+    def show_results(self):
+        """Show all responses"""
+        print("Survey Results: ")
+        for response in self.responses:
+            print(f" - {response}")
+            
+'''from CCP_CH11 import AnonymousSurvey
+
+# define question
+question = "What languages did you first learn to speak? "
+language_survey = AnonymousSurvey(question)
+
+# show questions and response
+language_survey.show_question()
+print("Enter 'q' to quit at any time \n")
+while True:
+    response = input('Language ')
+    if response == 'q':
+        break 
+    language_survey.store_response(response)
     
+#Show results of survey
+print(f"\nThank you to everyone who participated in the survey!")
+language_survey.show_question()'''
+
+# To test the survery reposnse 
+# 1 single test for multiple resposes 
+
+'''def test_store_three_responses():
+    """Test three responses"""
+    question = "What languages did you first first learn to speak? "
+    language_survey = AnonymousSurvey(question)
+    responses = ['English', 'Mandrin', 'Spanish',]
+    for response in responses:
+        language_survey.store_response(response)
+    for response in responses:
+        assert response in language_survey.responses'''
+        
+# testing using a fixture
+# @pytest.fixture
+# def language_survey():
+# """A Survey that will be avalaible to all test functions"""
+#    question = "What languages did you first first learn to speak? "
+#    language_survey = AnonymousSurvey(question)
+#    return language_survey
+# def test_store_single_response():
+#     """Test single response stored"""
+#     language_survey.store_response('English')
+#     assert 'English' in language_survey.responses
+#
